@@ -31,7 +31,7 @@ while True:
         while True:
             action = input(">>")
 
-            #Je gaat weer slapen
+            #Je springt uit het raam
             if action == "raam" or action == "spring":
                 time.sleep(0.5)
                 print("Je springt uit het raam")
@@ -194,7 +194,7 @@ while True:
                                 exit()
                             
                             #Je doet de bril omhoog
-                            if "bril" in action:
+                            elif "bril" in action:
                                 time.sleep(0.5)
                                 print("Je hebt de wcbril omhoog gedaan")
                                 action = input(">>")
@@ -204,6 +204,17 @@ while True:
                                     print("Gefeliciteerd, je hebt succesvol geplast!")
                                     time.sleep(1)
                                     print("Maar je sterft nogsteeds omdat ik daar zin in heb")
+
+                                else:   
+                                    print("Dat is geen commando")                 
+                                    continue 
+                            else:   
+                                print("Dat is geen commando")                 
+                                continue 
+                        else:   
+                            print("Dat is geen commando")                 
+                            continue 
+                            
 
                     #Je springt naar beneden
                     elif "spring" in action:
@@ -219,11 +230,13 @@ while True:
                         time.sleep(1)
                         print("Links van je is de kelderdeur, voor je de deur naar buiten en rechts de keuken")
 
-                        while True:                                
+                        while True:    
+                            action = ""                            
                             action = input(">>")
                         
                             #Je gaat naar de kelder
                             if "kelder" in action or "links" in action:
+                                
                                 time.sleep(0.5)
                                 if alInKelderGeweest == False:
                                     print("Je loopt naar de kelder en gaat naar beneden")
@@ -507,6 +520,7 @@ while True:
                                                 print("Je hebt geen kaas voor je tosti")
                                                 time.sleep(1)
                                                 print("Misschien ligt er wat in de koelkast?")
+                                                action = ""
                                                 break
                                             
                                             #Je hebt geen brood
@@ -515,6 +529,7 @@ while True:
                                                 print("Je hebt geen brood voor je tosti..")
                                                 time.sleep(1)
                                                 print("Misschien ligt er wat in de koelkast?")
+                                                action = ""
                                                 break
 
                                             #Je hebt alleen maar kaas en ham
@@ -580,25 +595,31 @@ while True:
                                         print("Dat is geen commando")                 
                                         continue 
                             else:   
-                                print("Dat is geen commando")                 
+                                print("Dat is geen commando")
+                                time.sleep(0.5)
+                                print("Probeer dingen als 'maak tosti' of 'open koelkast'")                     
                                 continue 
                     else:   
-                        print("Dat is geen commando")                 
+                        print("Dat is geen commando")
+                        time.sleep(0.5)
+                        print("Probeer dingen als 'ga naar beneden' of 'ga naar de wc'")                 
                         continue   
             else:   
-                print("Dat is geen commando")                 
+                print("Dat is geen commando")
+                time.sleep(0.5)
+                print("Probeer dingen als 'zet pc aan' of 'loop uit de kamer' ")                
                 continue              
-    elif startCommando == "Start" and falseStart == 0:
+    elif startCommando == "Start" or startCommando == "START" and falseStart == 0:
         falseStart += 1
         time.sleep(0.5)
         print("Wat zei ik nou net?")
-    elif startCommando == "Start" and falseStart == 1:
+    elif startCommando == "Start" or startCommando == "START" and falseStart == 1:
         falseStart += 1
         time.sleep(0.5)
         print("...")
         time.sleep(1)
         print("TYP START ZONDER HOOFDLETTER")
-    elif startCommando == "Start" and falseStart == 2:
+    elif startCommando == "Start" or startCommando == "START" and falseStart == 2:
     
         falseStart += 1
         time.sleep(0.5)
